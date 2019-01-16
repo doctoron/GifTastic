@@ -1,10 +1,12 @@
-var APIkey = "a4b6f03e3859400807800105c26fc9bd";
+// Get weather information from OpenWeather API
+let APIkey = "a4b6f03e3859400807800105c26fc9bd";
+let iFetch;
 
 // Here we are building the URL we need to query the database
 let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Montego%20Bay,Jamaica&units=imperial&appid=" + APIkey;
 let r;
 let s;
-//   let convertUTC;
+// let convertUTC; not needed once Open Weather API documentation provided conversion to imperial units.
 
 // function to convert UTC to  regular Time
 function convertUTC(x) {
@@ -49,7 +51,7 @@ return new Date(1000 * x);
 
 
 });
-// Chill and say "No Problem Mon" 
+// 
 $("button").on("click", function() {
     var person = $(this).attr("data-person");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +

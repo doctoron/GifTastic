@@ -13,4 +13,9 @@ A input field will allow the user to add their own area(s) of interest, all of w
 appended to the array, with a button created for each topic.  **
 **Ten images will be returned for each topic with the rating of the image displayed.
 
-Hopefully this will be deployed very soon!  
+** Discovery that Open Weather API documentation provided conversion of Cº to Fº (imperial units)!
+READ API DOCUMENTATION!
+
+** Eurika!  We have a working draft to push before deadline.  **
+
+** Now to create the input fields to grab user search interest.  **
