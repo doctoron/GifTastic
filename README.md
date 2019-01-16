@@ -18,4 +18,10 @@ READ API DOCUMENTATION!
 
 ** Eurika!  We have a working draft to push before deadline.  **
 
-** Now to create the input fields to grab user search interest.  **
+** Now to create the input fields to grab user search interest. 
+
+** Need to find a really nice font set for the weather data.
+
+** Future version might add a search for weather in other cities when I have more time to 
+dig deeper into the API **.  
+
