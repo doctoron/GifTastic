@@ -22,6 +22,18 @@ READ API DOCUMENTATION!
 
 ** Need to find a really nice font set for the weather data.
 
-** Future version might add a search for weather in other cities when I have more time to 
-dig deeper into the API **.  
+** Ideas for future version might add:
+## A search for weather in other cities 
+Need more time to dig deeper into the https://apilist.fun/i/geonames-api API 
+
+## Listing of namedays for country (trivia) 
+https://apilist.fun/i/namedays-calendar
+
+## Currency conversion: 
+https://currencylayer.com/documentation
+
+## Create ink to create a word cloud from search topics 
+https://www.mashape.com/gatheringpoint/Word-Cloud-Maker
+
+
 
