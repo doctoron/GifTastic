@@ -4,32 +4,33 @@ UCF Coding BootCamp
 Ronald Antonio
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
 
-
+// GET WEATHER INFORMATION FROM OPEN WEATHER API
 // Declaration of variables:
 let APIkey = "a4b6f03e3859400807800105c26fc9bd";
 let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Montego%20Bay,Jamaica&units=imperial&appid=" + APIkey;
 let r;
 let s;
-let topics =["Bob Marley", "Blue Mountain Coffee", "Beaches", "Mountains"];
+let topics =["Bob Marley","Jamaica","Blue Mountain","Beaches", "Coffee"];
 
 // function to convert UTC to  regular Time
 function convertUTC(x) {
     return new Date(1000 * x);
 }   
 
-// Create an AJAX call to retrieve data Log the data in console
-// Here we run our AJAX call to the OpenWeatherMap API
+// AJAX call to OpenWeatherMap API
+// Use th AJAX call to queryURL (openweathermap) to retrieve data
   $.ajax({
       url: queryURL, 
       method: "GET"
   })
 // We store all of the retrieved data inside of an object called "response"
   .then(function(response) {
+
 // We put sunrise and sunset in variables for conversion from UTC to standard time
       r = response.sys.sunrise;
       s = response.sys.sunset;
 
-// Log the queryURL
+// Logging the queryURL variable and response to check communication
     console.log(queryURL);
     console.log(response)
 
@@ -52,12 +53,10 @@ function convertUTC(x) {
     $(".visibility").text("Visibility: " + response.visibility);
     $(".sunrise").text("Sunrise: " + convertUTC(r));
     $(".sunset").text("Sunset: " + convertUTC(s)); 
-
-
 });
 
 function myFunction() {
-  var x = document.createElement("INPUT");
+  var x = document.createElement("topics.input");
   x.setAttribute("type", "text");
   x.setAttribute("value", "Your turn now!");
   document.body.appendChild(x);
@@ -70,15 +69,16 @@ $("button").on("click", function() {
     person + "&api_key=dc6zaTOxFJmzC&limit=10";
     
 // Create an AJAX call to retrieve data Log the data in console
-  console.log
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    })
-      .then(function(response) {
-        var results = response.data;
-
-        for (var i = 0; i < results.length; i++) {
+$.ajax({
+    url: queryURL,
+    method: "GET"
+})
+.then(function(response) {
+    var results = response.data;
+    console.log(queryURL);
+    console.log(results);
+    
+    for (var i = 0; i < results.length; i++) {
           var gifDiv = $("<div>");
           var rating = results[i].rating;
           var p = $("<p>").text("Rating: " + rating);
@@ -90,32 +90,32 @@ $("button").on("click", function() {
         }
       });
   });
-// Add search input data to array
+// Add user input to topics array
+console.log(topics);
   $("button").on("click", function() {
-    var animal = $(this).data("animal");
+    var topics = $(this).data("topics");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-      animal + "&api_key=dc6zaTOxFJmzC&limit=10";
+      topics + "&api_key=dc6zaTOxFJmzC&limit=10";
     $.ajax({
       url: queryURL,
       method: "GET" })
       .done(function(response) {
         for (var i = 0; i < response.data.length; i++) {
-          var animalDiv = $("<div>");
+          var topicsDiv = $("<div>");
           var p = $("<p>").text("Rating: " +response.data[i].rating);
-          var animalImage = $('<img>');
-          animalImage.attr("src",response.data[i].images.fixed_height.url);
-          animalDiv.append(p);
-          animalDiv.append(animalImage);
-          $("#gifs-appear-here").append(animalDiv);
+          var topicsImage = $('<img>');
+          topicsImage.attr("src",response.data[i].images.fixed_height.url);
+          topicsDiv.append(p);
+          topicsDiv.append(topicsImage);
+          $("#gifs-appear-here").append(topicsDiv);
         }
       })
     })
     // Dynamically create buttons from users input
       // =================================================================================
 
-      // 1. Create a for-loop to iterate through the letters array.
-    //   for (var i = 0; i < letters.length; i++) {
-        // Inside the loop...
+      // 1. Strigify the topics array
+        
         // 2. Create a variable named "letterBtn" equal to $("<button>");
         // var letterBtn = $("<button>");
         // 3. Then give each "letterBtn" the following classes: "letter-button" "letter" "letter-button-color".

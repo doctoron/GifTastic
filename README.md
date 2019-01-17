@@ -9,14 +9,17 @@ file:///Users/ranton/bootcamp/06-ajax/Activities/05-Bujumbura/05S-MoBay/moBay-we
 
 A call to the weather will appear in the center(ish) of the page.
 
-A input field will allow the user to add their own area(s) of interest, all of which will be
-appended to the array, with a button created for each topic.  **
+A input field will allow the user to add their own area(s) of interest, all of which will be appended to the array, with a button created for each topic.  **
+
 **Ten images will be returned for each topic with the rating of the image displayed.
 
 ** Discovery that Open Weather API documentation provided conversion of Cº to Fº (imperial units)!
 READ API DOCUMENTATION!
 
 ** Eurika!  We have a working draft to push before deadline.  **
+
+But...with all the ambitious plans I have, I am struggling to put an input box to take the users chosen topic and feed it to a search varible.  **
+Need more time.... or help! **
 
 ** Now to create the input fields to grab user search interest. 
 
