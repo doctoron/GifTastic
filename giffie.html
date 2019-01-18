@@ -25,12 +25,20 @@
     <div class="sunset"></div>  
     
     <div id="topics">
-    <form id="topics-form">
-    Your turn:
+            <!-- This form will be where users input data about the movies -->
+    <form id="search-form">
+            <label for="topics-input">Find Images for: </label>
+            <input type="text" id="topics-input" value=""><br>
+      
+        <!-- This button will trigger our AJAX call -->
+            <input id="find-images" type="submit">
+
+            <!-- <p><button data-person="bob marley">One Love!</button></p>
+            <input topics="default-topic" type="text">  
+            <button onclick="myFunction()">Your turn</button> -->
+
     </form>
-        <p><button data-person="bob marley">One Love!</button></p>
-        <input topics="topics" type="text">  
-        <button onclick="myFunction()">Your turn</button>
+
         
     </div>
     
