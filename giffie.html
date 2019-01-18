@@ -13,32 +13,67 @@
     <nav class="navbar navbar">
     <div class="container-fluid">
         <div class="navbar-header">
-
-    <!-- Retrieved data will be dumped here -->
-    <div class="city"></div>
-    <div class="wind"></div>
-    <div class="humidity"></div>
-    <div class="temp"></div>
-    <div class="description"></div>
-    <div class="visibility"></div>
-    <div class="sunrise"></div>
-    <div class="sunset"></div>  
-    
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="#">Logo</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><form id="search-form"></li><br>
+                    <li><span class = "topics-input">Find Images for: </span>
+                        <input type="text" id="topics-input" value=""><br></li>
+                    <li><input id="find-images" type="submit"></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+       
     <div id="topics">
             <!-- This form will be where users input data about the movies -->
-    <form id="search-form">
+    <!-- <form id="search-form">
             <label for="topics-input">Find Images for: </label>
             <input type="text" id="topics-input" value=""><br>
       
-        <!-- This button will trigger our AJAX call -->
+        This button will trigger our AJAX call for images
             <input id="find-images" type="submit">
+    </form> -->
 
-            <!-- <p><button data-person="bob marley">One Love!</button></p>
-            <input topics="default-topic" type="text">  
-            <button onclick="myFunction()">Your turn</button> -->
-
-    </form>
-
+    <div class="container-fluid text-center">    
+            <div class="row content">
+                <div class="col-sm-2 sidenav">
+                        <div id="gifs-appear-here"></div>
+                </div>
+                <div class="col-sm-8 text-left"> 
+                    <!-- Retrieved data will be dumped here -->
+                    <div class="city"></div>
+                    <div class="wind"></div>
+                    <div class="humidity"></div>
+                    <div class="temp"></div>
+                    <div class="description"></div>
+                    <div class="visibility"></div>
+                    <div class="sunrise"></div>
+                    <div class="sunset"></div>  
+                </div>
+                <div class="col-sm-2 sidenav">
+                    <div class="well">
+                        <p></p>
+                    </div>
+                    <div class="well">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
         
     </div>
     
@@ -51,8 +86,8 @@
 
 <!-- <nav class="navbar navbar-inverse">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <div class="navbar-header"> -->
+            <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>                        
@@ -71,9 +106,9 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav> -->
 
-<div class="container-fluid text-center">    
+<!-- <div class="container-fluid text-center">    
     <div class="row content">
         <div class="col-sm-2 sidenav">
             <p><a href="#">Link</a></p>
@@ -96,11 +131,11 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <footer class="container-fluid text-center">
     <p>Footer Text</p>
-</footer> -->
+</footer>
 <!-- end grid from w3-schools -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
