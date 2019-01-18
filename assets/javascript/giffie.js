@@ -12,41 +12,42 @@ let person;
 let topics;
 let r;
 let s;
-// let getTopics =["Bob Marley","Jamaica","Husein Bolt"];
-// $("#find-images").on("click", function(event) {
-//   event.preventDefault();
-//   console.log("Button was clicked...test successful");
-//   var topics = $("#topics-input").val();
-//   console.log(topics);
+let getTopics =["Bob Marley","Jamaica","Husein Bolt","Sunsplash"];
+$("#find-images").on("click", function(event) {
+  event.preventDefault();
+  console.log("Button was clicked...test successful");
+  var topics = $("#topics-input").val();
+  console.log(topics);
   
 //   // Define queryURL string with input-topic and giphy APIkey
-//   queryURL2 = "https://api.giphy.com/v1/gifs/search?q=" +
-//   topics + "&api_key=dc6zaTOxFJmzC&limit=10";
+  queryURL2 = "https://api.giphy.com/v1/gifs/search?q=" +
+  topics + "&api_key=dc6zaTOxFJmzC&limit=10";
   
   
 //   // Create an AJAX call to retrieve data & log the data in console
-//   $.ajax({
-//     url: queryURL2,
-//     method: "GET"
-//   })
-//   .then(function(response) {
-//     var results2 = response.data;
-//     console.log(queryURL2);
-//     console.log(results2);
+  $.ajax({
+    url: queryURL2,
+    method: "GET"
+  })
+  .then(function(response) {
+    var results2 = response.data;
+    console.log(queryURL2);
+    console.log(results2);
     
-//     for (var i = 0; i < results2.length; i++) {
-//       var gifDiv = $("<div>");
-//       var rating = results2[i].rating;
-//       var p = $("<p>").text("Rating: " + rating);
-//       var personImage = $("<img>");
-//       personImage.attr("src", results2[i].images.fixed_height.url);
-//       gifDiv.append(p);
-//       gifDiv.append(personImage);
-//       $("#gifs-appear-here").prepend(gifDiv);
-//     }
-//     // GET WEATHER INFORMATION FROM OPEN WEATHER API
-//   });
-// });
+    for (var i = 0; i < results2.length; i++) {
+      var gifDiv = $("<div>");
+      var rating = results2[i].rating;
+      var p = $("<p>").text("Rating: " + rating);
+      var personImage = $("<img>");
+      personImage.attr("src", results2[i].images.fixed_height.url);
+      gifDiv.append(p);
+      gifDiv.append(personImage);
+      $("#gifs-appear-here").prepend(gifDiv);
+    }
+  });
+});
+
+// GET WEATHER INFORMATION FROM OPEN WEATHER API
 
 // function to convert UTC to  regular Time
 convertUTC = (x) => {
@@ -57,7 +58,7 @@ convertUTC = (x) => {
 
 
 // AJAX call to OpenWeatherMap API
-// Use th AJAX call to queryURL (openweathermap) to retrieve data
+// Use AJAX method to call queryURL (openweathermap) and retrieve data
 // let getWeather =() => {
 $.ajax({
       url: queryURL, 
@@ -93,5 +94,4 @@ $.ajax({
     $(".sunrise").text("Sunrise: " + convertUTC(r));
     $(".sunset").text("Sunset: " + convertUTC(s)); 
 });
-
   
