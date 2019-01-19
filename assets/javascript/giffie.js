@@ -4,24 +4,63 @@ UCF Coding BootCamp
 Ronald Antonio
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
 
-// GET WEATHER INFORMATION FROM OPEN WEATHER API
 // Declaration of variables:
 let APIkey = "a4b6f03e3859400807800105c26fc9bd";
 let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Montego%20Bay,Jamaica&units=imperial&appid=" + APIkey;
 let queryURL2;
 let person;
+let topics;
 let r;
 let s;
-let topics =["Bob Marley","Jamaica","Blue Mountain","Beaches", "Coffee"];
+let getTopics =["Bob Marley","Jamaica","Husein Bolt","Sunsplash"];
+$("#find-images").on("click", function(event) {
+  event.preventDefault();
+  console.log("Button was clicked...test successful");
+  var topics = $("#topics-input").val();
+  console.log(topics);
+  
+//   // Define queryURL string with input-topic and giphy APIkey
+  queryURL2 = "https://api.giphy.com/v1/gifs/search?q=" +
+  topics + "&api_key=dc6zaTOxFJmzC&limit=10";
+  
+  
+//   // Create an AJAX call to retrieve data & log the data in console
+  $.ajax({
+    url: queryURL2,
+    method: "GET"
+  })
+  .then(function(response) {
+    var results2 = response.data;
+    console.log(queryURL2);
+    console.log(results2);
+    
+    for (var i = 0; i < results2.length; i++) {
+      var gifDiv = $("<div>");
+      var rating = results2[i].rating;
+      var p = $("<p>").text("Rating: " + rating);
+      var personImage = $("<img>");
+      personImage.attr("src", results2[i].images.fixed_height.url);
+      gifDiv.append(p);
+      gifDiv.append(personImage);
+      $("#gifs-appear-here").prepend(gifDiv);
+    }
+  });
+});
+
+// GET WEATHER INFORMATION FROM OPEN WEATHER API
 
 // function to convert UTC to  regular Time
-function convertUTC(x) {
+convertUTC = (x) => {
     return new Date(1000 * x);
-}   
+} 
+
+// getWeather();
+
 
 // AJAX call to OpenWeatherMap API
-// Use th AJAX call to queryURL (openweathermap) to retrieve data
-  $.ajax({
+// Use AJAX method to call queryURL (openweathermap) and retrieve data
+// let getWeather =() => {
+$.ajax({
       url: queryURL, 
       method: "GET"
   })
@@ -31,11 +70,10 @@ function convertUTC(x) {
 // We put sunrise and sunset in variables for conversion from UTC to standard time
       r = response.sys.sunrise;
       s = response.sys.sunset;
-
-// Logging the queryURL variable and response to check communication
-    console.log(queryURL);
-    console.log(response)
-
+      // // Logging the queryURL variable and response to check communication
+      console.log(queryURL);
+      console.log(response)
+        
 // Logging the resulting object
     // console.log("Wind Speed: " + response.wind.speed);
     // console.log("Humidity: " + response.main.humidity);
@@ -56,49 +94,4 @@ function convertUTC(x) {
     $(".sunrise").text("Sunrise: " + convertUTC(r));
     $(".sunset").text("Sunset: " + convertUTC(s)); 
 });
-
-
-// function myFunction() {
-//   var x = document.createElement("topics.input");
-//   x.setAttribute("type", "text");
-//   x.setAttribute("value", "Your turn now!");
-//   document.body.appendChild(x);
-// }
-
-$("#find-images").on("click", function(event) {
-  event.preventDefault();
-    console.log("Button was clicked");
-    var topics=$("#topics-input").val();
-    var person = $(this).attr("topics-input");
-    console.log(topics);
-    console.log(person);
-    
-    var queryURL2 = "https://api.giphy.com/v1/gifs/search?q=" +
-    topics + "&api_key=dc6zaTOxFJmzC&limit=10";
-    
-  });
-
-// Create an AJAX call to retrieve data & log the data in console
-$.ajax({
-    url: queryURL2,
-    method: "GET",
-    crossDomain: true,
-    data: JSON.stringify(topics),
-    dataType: "json"
-  })
-.done(function(response) {
-    var results2 = response.data;
-    console.log(queryURL2);
-    console.log(results2);
-    
-    for (var i = 0; i < results2.length; i++) {
-          var gifDiv = $("<div>");
-          var rating = results2[i].rating;
-          var p = $("<p>").text("Rating: " + rating);
-          var personImage = $("<img>");
-          personImage.attr("src", results2[i].images.fixed_height.url);
-          gifDiv.append(p);
-          gifDiv.append(personImage);
-          $("#gifs-appear-here").prepend(gifDiv);
-        }
-      });
+  

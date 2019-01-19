@@ -35,7 +35,7 @@ https://apilist.fun/i/namedays-calendar
 ## Currency conversion: 
 https://currencylayer.com/documentation
 
-## Create ink to create a word cloud from search topics 
+## Create link to create a word cloud from search topics 
 https://www.mashape.com/gatheringpoint/Word-Cloud-Maker
 
 
