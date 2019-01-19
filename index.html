@@ -3,91 +3,86 @@
 <head>
     <title>GifTastic Giffie Page</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css"/>
-    
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/main.css"/>   
 </head>
 <body>  
     
-    <!-- Retrieved data will be dumped here -->
-    <div class="city"></div>
-    <div class="wind"></div>
-    <div class="humidity"></div>
-    <div class="temp"></div>
-    <div class="description"></div>
-    <div class="visibility"></div>
-    <div class="sunrise"></div>
-    <div class="sunset"></div>  
-    
+<div class="container">
+    <nav class="navbar navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="#">Logo</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><form id="search-form"></li><br>
+                    <li><span class = "topics-input">Find Images for: </span>
+                        <input type="text" id="topics-input" value=""><br></li>
+                    <li><input id="find-images" type="submit"></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+       
     <div id="topics">
-    <form id="topics-form">
-    Your turn:
-    </form>
-        <p><button data-person="bob marley">One Love!</button></p>
-        <input topics="topics" type="text">  
-        <button onclick="myFunction()">Your turn</button>
+            <!-- This form will be where users input data about the movies -->
+    <!-- <form id="search-form">
+            <label for="topics-input">Find Images for: </label>
+            <input type="text" id="topics-input" value=""><br>
+      
+        This button will trigger our AJAX call for images
+            <input id="find-images" type="submit">
+    </form> -->
+
+    <div class="container-fluid text-center">    
+            <div class="row content">
+                <div class="col-sm-2 sidenav">
+                        <div id="gifs-appear-here"></div>
+                </div>
+                <div class="col-sm-8 text-left"> 
+                    <!-- Retrieved data will be dumped here -->
+                    <div class="city"></div>
+                    <div class="wind"></div>
+                    <div class="humidity"></div>
+                    <div class="temp"></div>
+                    <div class="description"></div>
+                    <div class="visibility"></div>
+                    <div class="sunrise"></div>
+                    <div class="sunset"></div>  
+                </div>
+                <div class="col-sm-2 sidenav">
+                    <div class="well">
+                        <p></p>
+                    </div>
+                    <div class="well">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
         
     </div>
     
     <div id="gifs-appear-here"></div>
     
 </div>
-
-
-<!-- The following is a w3-schools template grid that is being used to "jump start" the layout of the page. -->
-
-<!-- <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>                        
-            </button>
-            <a class="navbar-brand" href="#">Logo</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<div class="container-fluid text-center">    
-    <div class="row content">
-        <div class="col-sm-2 sidenav">
-            <p><a href="#">Link</a></p>
-            <p><a href="#">Link</a></p>
-            <p><a href="#">Link</a></p>
-        </div>
-        <div class="col-sm-8 text-left"> 
-            <h1>Welcome</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <hr>
-            <h3>Test</h3>
-            <p>Lorem ipsum...</p>
-        </div>
-        <div class="col-sm-2 sidenav">
-            <div class="well">
-                <p>ADS</p>
-            </div>
-            <div class="well">
-                <p>ADS</p>
-            </div>
-        </div>
-    </div>
 </div>
 
-<footer class="container-fluid text-center">
+<!-- <footer class="container-fluid text-center">
     <p>Footer Text</p>
 </footer> -->
 <!-- end grid from w3-schools -->
