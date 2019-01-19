@@ -21,22 +21,22 @@ READ API DOCUMENTATION!
 But...with all the ambitious plans I have, I am struggling to put an input box to take the users chosen topic and feed it to a search varible.  **
 Need more time.... or help! **
 
-** Now to create the input fields to grab user search interest. 
+** Now to create the input fields to grab user search interest. (done!)
 
-** Need to find a really nice font set for the weather data.
+** Need to find a really nice font set for the weather data.(Still looking)
 
 ** Ideas for future version might add:
 ## A search for weather in other cities 
-Need more time to dig deeper into the https://apilist.fun/i/geonames-api API 
+I originally thought that I needed more time to dig deeper into the https://apilist.fun/i/geonames-api API.  But upon further investigation, there was a way to make it happen--though not very elegant--to prove the concept successfully.
 
 ## Listing of namedays for country (trivia) 
-https://apilist.fun/i/namedays-calendar
+https://apilist.fun/i/namedays-calendar-- We'll see later...
 
 ## Currency conversion: 
-https://currencylayer.com/documentation
+https://currencylayer.com/documentation-- More time...
 
 ## Create link to create a word cloud from search topics 
-https://www.mashape.com/gatheringpoint/Word-Cloud-Maker
+https://www.mashape.com/gatheringpoint/Word-Cloud-Maker-- This is for fun!
 
 
 

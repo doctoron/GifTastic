@@ -6,7 +6,7 @@ Ronald Antonio
 
 // Declaration of variables:
 // let place = "Montego%20Bay,Jamaica"
-let place;
+let place="Montego Bay, Jamaica";
 let APIkey = "a4b6f03e3859400807800105c26fc9bd";
 // let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Montego%20Bay,Jamaica&units=imperial&appid=" + APIkey;
 let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=";
@@ -53,29 +53,24 @@ $("#find-images").on("click", function(event) {
 
 // GET WEATHER INFORMATION FROM OPEN WEATHER API
 
-
-
-// function to convert UTC to  regular Time
+// First a function to convert UTC to  regular Time for sunrise/sunset times
 convertUTC = (x) => {
   return new Date(1000 * x);
 } 
 
-// Use AJAX method to call queryURL (openweathermap) and retrieve data
-
 // AJAX call to OpenWeatherMap API
-// Get location for weather query
-$("button").click(function () {
-  var text = $(this).text();
- place = text;  // $("input").val(text);
- console.log("Button was clicked...test successful");
- console.log(place);
-// $(".this").on("click", function(event) {
-// event.preventDefault();
-// place = $("this").val();
-  console.log(place);
-  // getWeather();
-// let getWeather =() => {
-console.log(place);
+// Get location to use for weather query
+$("button").click(function (event) {
+    let text = $(this).text();
+    place = text;  // $("input").val(text);
+    event.preventDefault();
+      console.log("Button was clicked...test successful");
+      console.log(place);
+                // $(".this").on("click", function(event) {
+                // place = $("this").val();
+                // console.log(place);
+                // getWeather();
+                // let getWeather =() => {
 $.ajax({
       url: queryURL + place + "&units=imperial&appid=" + APIkey, 
       method: "GET"
@@ -91,13 +86,13 @@ $.ajax({
       console.log(response)
         
 // Logging the resulting object
-    // console.log("Wind Speed: " + response.wind.speed);
-    // console.log("Humidity: " + response.main.humidity);
-    // console.log("Temperature (Fº): " + response.main.temp);
-    // console.log("Weather Description: " + response.weather[0].description);
-    // console.log("Visibility: " + response.visibility);
-    // console.log("Sunrise: " + convertUTC(r));
-    // console.log("Sunset: " + convertUTC(s));  
+    console.log("Wind Speed: " + response.wind.speed);
+    console.log("Humidity: " + response.main.humidity);
+    console.log("Temperature (Fº): " + response.main.temp);
+    console.log("Weather Description: " + response.weather[0].description);
+    console.log("Visibility: " + response.visibility);
+    console.log("Sunrise: " + convertUTC(r));
+    console.log("Sunset: " + convertUTC(s));  
 
     
 // Transfer content to HTML

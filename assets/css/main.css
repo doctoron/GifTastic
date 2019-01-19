@@ -7,24 +7,24 @@
     object-position: 50% 50%;
    }
   /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-  .row.content {height: 450px}
+  .row.content {height: 550px}
   
-  /* Set gray background color and 100% height */
+  /* Set light green background color and 100% height */
   .sidenav {
     padding-top: 20px;
     margin-top: 20px;
-    background-color: #f1f1f1;
+    background-color: #f1f5f0;
     height: 100%;
     object-position: 50% 50%;
   }
-  .btn-group-vertical {
-    margin: 5px;
-    /* background-color: #4caf50; */
-    border: 1px solid yellow;
+  .btn-button-success {
+    margin: 2px;
+    background-color: #f6faf7;
     color: #000000;
-    padding: 10px 24px;
-    display: list-item;
     object-position: 50% 50%;
+    /* border: 1px solid yellow; */
+    /* padding: px 5px; */
+    /* display: list-item; */
 
   }
   img {
