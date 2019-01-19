@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>GifTastic Page</title>
+    <title>GifTastic Giffie Page</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -25,12 +25,12 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">About Us</a></li>
                         <li><a href="#">Cruises</a></li>
-                        <li><a href="#">Tours</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Maps</a></li>
+                        <li><a href="#">Currency Xchange</a></li>
                     <!-- This form will be where users input data person, place or thing -->
                         <li><form id="search-form"></li><br>
                         <li><span class = "topics-input">Find an image of person or thing: </span>
-                            <input type="text" id="topics-input" value=""><br></li>
+                            <input type="text" id="topics-input" value="Bob Marley"><br></li>
                     <!-- This button will trigger our AJAX call for images -->
                         <li><input id="find-images" type="submit"></li>
                     </ul>
@@ -40,7 +40,7 @@
                 </div>
             </div>
     </nav>
-       
+
     <div id="topics">
         <div class="container-fluid text-center">    
                 <div class="row content">
@@ -62,11 +62,12 @@
                     </div>
                 <div class="col-sm-2 sidenav">
                     <div class = "btn-group-vertical">
-                        <button>Montego Bay, Jamaica</button>
-                        <button>New York, New York</button>
-                        <button>London, England</button>
-                        <button>San Francisco, California</button>
-                        <button>Johannesburg, South Africa</button>
+                        <h3>Weather Report:</h3>
+                        <button type="button" class="btn btn-info">Montego Bay, Jamaica</button>
+                        <button type="button" class="btn btn-info">New York, New York</button>
+                        <button type="button" class="btn btn-info">London, England</button>
+                        <button type="button" class="btn btn-info">San Francisco, California</button>
+                        <button type="button" class="btn btn-info">Johannesburg, South Africa</button>
                     </div>
                         <!-- <input type="text" value="place" /> -->
                     </div>

@@ -6,7 +6,7 @@ Ronald Antonio
 
 // Declaration of variables:
 // let place = "Montego%20Bay,Jamaica"
-let place;
+let place="Montego Bay, Jamaica";
 let APIkey = "a4b6f03e3859400807800105c26fc9bd";
 // let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Montego%20Bay,Jamaica&units=imperial&appid=" + APIkey;
 let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=";
