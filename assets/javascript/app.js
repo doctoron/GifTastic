@@ -5,14 +5,18 @@ Ronald Antonio
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
 
 // Declaration of variables:
+// let place = "Montego%20Bay,Jamaica"
+let place;
 let APIkey = "a4b6f03e3859400807800105c26fc9bd";
-let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Montego%20Bay,Jamaica&units=imperial&appid=" + APIkey;
+// let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Montego%20Bay,Jamaica&units=imperial&appid=" + APIkey;
+let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=";
 let queryURL2;
 let person;
 let topics;
-let r;
-let s;
+let r; //sunrise
+let s; //sunset
 let getTopics =["Bob Marley","Jamaica","Husein Bolt","Sunsplash"];
+
 $("#find-images").on("click", function(event) {
   event.preventDefault();
   console.log("Button was clicked...test successful");
@@ -24,7 +28,7 @@ $("#find-images").on("click", function(event) {
   topics + "&api_key=dc6zaTOxFJmzC&limit=10";
   
   
-//   // Create an AJAX call to retrieve data & log the data in console
+//   // Create an AJAX call to retrieve image data & log the data in console
   $.ajax({
     url: queryURL2,
     method: "GET"
@@ -49,19 +53,31 @@ $("#find-images").on("click", function(event) {
 
 // GET WEATHER INFORMATION FROM OPEN WEATHER API
 
+
+
 // function to convert UTC to  regular Time
 convertUTC = (x) => {
-    return new Date(1000 * x);
+  return new Date(1000 * x);
 } 
 
-// getWeather();
-
+// Use AJAX method to call queryURL (openweathermap) and retrieve data
 
 // AJAX call to OpenWeatherMap API
-// Use AJAX method to call queryURL (openweathermap) and retrieve data
+// Get location for weather query
+$("button").click(function () {
+  var text = $(this).text();
+ place = text;  // $("input").val(text);
+ console.log("Button was clicked...test successful");
+ console.log(place);
+// $(".this").on("click", function(event) {
+// event.preventDefault();
+// place = $("this").val();
+  console.log(place);
+  // getWeather();
 // let getWeather =() => {
+console.log(place);
 $.ajax({
-      url: queryURL, 
+      url: queryURL + place + "&units=imperial&appid=" + APIkey, 
       method: "GET"
   })
 // We store all of the retrieved data inside of an object called "response"
@@ -94,4 +110,4 @@ $.ajax({
     $(".sunrise").text("Sunrise: " + convertUTC(r));
     $(".sunset").text("Sunset: " + convertUTC(s)); 
 });
-  
+});
