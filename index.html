@@ -28,11 +28,11 @@
                         <li><a href="#">Maps</a></li>
                         <li><a href="#">Currency Xchange</a></li>
                     <!-- This form will be where users input data person, place or thing -->
-                        <li><form id="search-form"></li><br>
+                        <!-- <li><form id="search-form"></li><br>
                         <li><span class = "topics-input">Find an image of person or thing: </span>
                             <input type="text" id="topics-input" value="Bob Marley"><br></li>
-                    <!-- This button will trigger our AJAX call for images -->
-                        <li><input id="find-images" type="submit"></li>
+                         This button will trigger our AJAX call for images
+                        <li><input id="find-images" type="submit"></li> -->
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -69,19 +69,18 @@
                         <button type="button" class="btn btn-info">San Francisco, California</button>
                         <button type="button" class="btn btn-info">Johannesburg, South Africa</button>
                     </div>
-                        <!-- <input type="text" value="place" /> -->
+                    <form id="search-form">
+                        <span class = "topics-input">Search Images: </span>
+                            <input type="text" id="topics-input" value="Bob Marley"><br>
+                            <!-- This button will trigger our AJAX call for images -->
+                            <input id="find-images" type="submit">
+                            <!-- <input id="find-images" type="submit"><input type="text" value="place" /> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<!-- <footer class="container-fluid text-center">
-    <p>Footer Text</p>
-</footer> -->
-<!-- end grid from w3-schools -->
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
 <script src="assets/javascript/giffie.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
